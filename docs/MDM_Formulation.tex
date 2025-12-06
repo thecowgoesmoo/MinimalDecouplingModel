@@ -1,0 +1,57 @@
+\section{Methodology: The Minimal Decoupling Model (MDM)}
+
+We define the economy as a dynamical system governed by the interplay between capital accumulation, technological diffusion, and labor participation. The system state vector is defined as $x = [K_H, K_L, R, \theta, P, S]$, representing High-Tech Capital, Low-Tech Capital, Automation Capital, Diffusion, Labor Participation, and the Accumulated Subsidy, respectively.
+
+\subsection{Production and Labor Demand}
+Output is generated via two sectors. The High-Tech sector ($Y_H$) utilizes a Constant Elasticity of Substitution (CES) production function, allowing for substitutability between cognitive labor ($L_H$) and automation ($R$):
+
+$$
+Y_H = A_H K_H^\alpha \left[ (1-\mu)L_H^\rho + \mu (\psi(\theta) R)^\rho \right]^{\frac{1}{\rho}}
+$$
+
+where $\rho = (\sigma-1)/\sigma$ determines the elasticity of substitution $\sigma$, and $\psi(\theta)$ represents the efficiency advantage of automation, which decays as technology diffuses ($\theta \to 1$). The Low-Tech sector ($Y_L$) follows a Cobb-Douglas specification:
+
+$$
+Y_L = A_L K_L^\beta L_L^{1-\beta}
+$$
+
+Labor is allocated to equate the Marginal Product of Labor (MPL) across sectors, defining the market wage $w$:
+$$
+w = \frac{\partial Y_H}{\partial L_H} = \frac{\partial Y_L}{\partial L_L}
+$$
+
+\subsection{Participation Dynamics and the Social Contract}
+Standard models assume inelastic labor supply. We model Participation ($P$) as a dynamic state driven by the gap between the effective wage ($w_{\text{eff}}$) and a reservation "survival" wage ($w_{\text{bar}}$). We employ a hyperbolic tangent function to model the saturation of the labor force and the friction of social change:
+
+$$
+\dot{P} = 
+\begin{cases} 
+\eta P \tanh(\lambda (w_{\text{eff}} - w_{\text{bar}})) & \text{if } w_{\text{eff}} \geq w_{\text{bar}} \\
+\delta_P P \tanh(\lambda (w_{\text{eff}} - w_{\text{bar}})) & \text{if } w_{\text{eff}} < w_{\text{bar}}
+\end{cases}
+ - \chi (\mu \psi)^\gamma (1-\theta) P
+$$
+
+The final term represents "Skill Exclusion," where rapid technological shifts disenfranchise a fraction of the workforce regardless of wage levels.
+
+\subsection{Closed-Loop Control: The Thermostat}
+To maintain participation at a target level ($P_{\text{target}}$), we introduce a Proportional-Integral (PI) Controller acting on the effective wage. The control input, the wage subsidy fraction $S(t)$, evolves to minimize the error $e(t) = P_{\text{target}} - P(t)$:
+
+$$
+S(t) = \text{sat}_{[0, S_{\text{max}}]} \left( K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau \right)
+$$
+
+The effective wage perceived by the workforce is thus augmented by the subsidy, funded by a fraction of total output $Y$:
+
+$$
+w_{\text{eff}} = w_{\text{market}} + \frac{S(t) \cdot Y}{P \cdot N}
+$$
+
+\subsection{Investment Friction}
+To reflect realistic constraints on capital scaling, we modify the standard accumulation equation $\dot{K} = I - \delta K$ by introducing an adjustment cost factor $\phi$. The effective capital formation is given by:
+
+$$
+\dot{K}_i = \frac{I_i}{1 + \phi \left( \frac{I_i}{K_i} \right)} - \delta_i K_i \quad \text{for } i \in \{H, L, R\}
+$$
+
+As investment intensity ($I/K$) rises, the marginal efficiency of investment declines, preventing instantaneous singularities in output growth.

@@ -1,0 +1,338 @@
+#LyX file created by tex2lyx 2.4
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/rkmoore/Documents/MATLAB/economics/
+\textclass article
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding auto-legacy
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\use_lineno false
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Methodology: The Minimal Decoupling Model (MDM)
+\end_layout
+
+\begin_layout Standard
+We define the economy as a dynamical system governed by the interplay between capital accumulation, technological diffusion, and labor participation. The system state vector is defined as 
+\begin_inset Formula $x = [K_H, K_L, R, \theta, P, S]$
+\end_inset
+
+, representing High-Tech Capital, Low-Tech Capital, Automation Capital, Diffusion, Labor Participation, and the Accumulated Subsidy, respectively.
+\end_layout
+
+\begin_layout Subsection
+Production and Labor Demand
+\end_layout
+
+\begin_layout Standard
+Output is generated via two sectors. The High-Tech sector (
+\begin_inset Formula $Y_H$
+\end_inset
+
+) utilizes a Constant Elasticity of Substitution (CES) production function, allowing for substitutability between cognitive labor (
+\begin_inset Formula $L_H$
+\end_inset
+
+) and automation (
+\begin_inset Formula $R$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+Y_H = A_H K_H^\alpha \left[ (1-\mu)L_H^\rho + \mu (\psi(\theta) R)^\rho \right]^{\frac{1}{\rho}}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\rho = (\sigma-1)/\sigma$
+\end_inset
+
+ determines the elasticity of substitution 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, and 
+\begin_inset Formula $\psi(\theta)$
+\end_inset
+
+ represents the efficiency advantage of automation, which decays as technology diffuses (
+\begin_inset Formula $\theta \to 1$
+\end_inset
+
+). The Low-Tech sector (
+\begin_inset Formula $Y_L$
+\end_inset
+
+) follows a Cobb-Douglas specification:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+Y_L = A_L K_L^\beta L_L^{1-\beta}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Labor is allocated to equate the Marginal Product of Labor (MPL) across sectors, defining the market wage 
+\begin_inset Formula $w$
+\end_inset
+
+: 
+\begin_inset Formula \[
+w = \frac{\partial Y_H}{\partial L_H} = \frac{\partial Y_L}{\partial L_L}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Participation Dynamics and the Social Contract
+\end_layout
+
+\begin_layout Standard
+Standard models assume inelastic labor supply. We model Participation (
+\begin_inset Formula $P$
+\end_inset
+
+) as a dynamic state driven by the gap between the effective wage (
+\begin_inset Formula $w_{\text{eff}}$
+\end_inset
+
+) and a reservation 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+survival
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+ wage (
+\begin_inset Formula $w_{\text{bar}}$
+\end_inset
+
+). We employ a hyperbolic tangent function to model the saturation of the labor force and the friction of social change:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\dot{P} = 
+\begin{cases} 
+\eta P \tanh(\lambda (w_{\text{eff}} - w_{\text{bar}})) & \text{if } w_{\text{eff}} \geq w_{\text{bar}} \\
+\delta_P P \tanh(\lambda (w_{\text{eff}} - w_{\text{bar}})) & \text{if } w_{\text{eff}} < w_{\text{bar}}
+\end{cases}
+ - \chi (\mu \psi)^\gamma (1-\theta) P
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The final term represents 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+Skill Exclusion,
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+ where rapid technological shifts disenfranchise a fraction of the workforce regardless of wage levels.
+\end_layout
+
+\begin_layout Subsection
+Closed-Loop Control: The Thermostat
+\end_layout
+
+\begin_layout Standard
+To maintain participation at a target level (
+\begin_inset Formula $P_{\text{target}}$
+\end_inset
+
+), we introduce a Proportional-Integral (PI) Controller acting on the effective wage. The control input, the wage subsidy fraction 
+\begin_inset Formula $S(t)$
+\end_inset
+
+, evolves to minimize the error 
+\begin_inset Formula $e(t) = P_{\text{target}} - P(t)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+S(t) = \text{sat}_{[0, S_{\text{max}}]} \left( K_p e(t) + K_i \int_{0}^{t} e(\tau) d\tau \right)
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The effective wage perceived by the workforce is thus augmented by the subsidy, funded by a fraction of total output 
+\begin_inset Formula $Y$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+w_{\text{eff}} = w_{\text{market}} + \frac{S(t) \cdot Y}{P \cdot N}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Investment Friction
+\end_layout
+
+\begin_layout Standard
+To reflect realistic constraints on capital scaling, we modify the standard accumulation equation 
+\begin_inset Formula $\dot{K} = I - \delta K$
+\end_inset
+
+ by introducing an adjustment cost factor 
+\begin_inset Formula $\phi$
+\end_inset
+
+. The effective capital formation is given by:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\dot{K}_i = \frac{I_i}{1 + \phi \left( \frac{I_i}{K_i} \right)} - \delta_i K_i \quad \text{for } i \in \{H, L, R\}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As investment intensity (
+\begin_inset Formula $I/K$
+\end_inset
+
+) rises, the marginal efficiency of investment declines, preventing instantaneous singularities in output growth.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,35 @@
+# MATLAB Autosaves & Backups
+*.asv
+*.autosave
+*.bak
+*~
+
+# MATLAB Project & Configuration Files
+*.prj
+*.mlprj
+.MATLAB/
+*.settings
+
+# Compiled / Binary Files (Mex)
+*.mex*
+*.oct
+
+# Simulink / Cache (Good practice to include, even if not using Simulink)
+slprj/
+*.slxc
+*.sldi
+
+# Large Data Files (Prevent accidental commit of huge workspaces)
+# You can comment this out if you WANT to share .mat files
+*.mat
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Python / IDE Cruft (If you port later)
+__pycache__/
+*.pyc
+.vscode/
+.idea/
