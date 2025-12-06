@@ -60,7 +60,7 @@ The MDM integrates standard production functions with a dynamic labor supply res
 
 If you use this model, code, or the associated stability analysis in your research or project, please cite this repository:
 
-> [Richard Moore, Gemini 3, ChatGPT-5.1]. (2025). *Minimal Decoupling Model (MDM): A dynamical systems approach to automation economics*. GitHub. https://github.com/thecowgoesmoo/MinimalDecouplingModel
+> [Richard Moore]. (2025). *Minimal Decoupling Model (MDM): A dynamical systems approach to automation economics*. GitHub. https://github.com/thecowgoesmoo/MinimalDecouplingModel
 
 ## License
 
