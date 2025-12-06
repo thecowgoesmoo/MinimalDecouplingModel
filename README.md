@@ -9,7 +9,7 @@
 
 ## Overview
 
-![Stability Basins Hero Figure](images/hero_figure_stability_basins.png)
+![Stability Basins Hero Figure](hero_figure_stability_basins.png)
 *Figure 1: Visualization of stability basins in the Minimal Decoupling Model, demonstrating that automation-impacted economies may settle into distinct equilibria with varying levels of prosperity.*
 
 The **Minimal Decoupling Model (MDM)** is a parsimonious set of differential algebraic equations (DAE) designed to investigate the macroeconomic dynamics of rapid technological automation. 
