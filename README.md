@@ -20,7 +20,7 @@ This repository provides a rigorous mathematical framework to test regulatory in
 *Figure 1: Basin of Attraction analysis. The **Teal trajectories** represent the "Safe Zone" where the Thermostat Controller successfully stabilizes participation ($P \to 0.7$). The **Red trajectories** show the "Subsidy Trap," where the economy collapses despite intervention because it started with insufficient capital or participation.*
 
 ### The Solution (Time Series)
-![Thermostat Demo](output/MDM_Demo_Output.png)
+![Thermostat Demo](images/MDM_Demo_Output.png)
 *Figure 2: A single simulation run of the "Thermostat Economy." Note how the **Subsidy (Top Right)** rises to bridge the wage gap, then naturally declines as capital accumulation eventually raises the market wage above the survival threshold.*
 
 ## The Problem: Structural Decoupling
