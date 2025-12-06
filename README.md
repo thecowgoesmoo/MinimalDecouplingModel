@@ -1,9 +1,15 @@
 # Minimal Decoupling Model (MDM)
 
+**A dynamical systems model exploring control-theoretic policies to steer automation-impacted economies toward high-prosperity stability points.**
+
+
+Principal Investigator: Richard Moore, AI Collaborators: Gemini 3, ChatGPT-5.1
+
+![Static Badge](https://img.shields.io/badge/Collaborators-Gemini3,ChatGPT5-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2024b-orange.svg)](https://www.mathworks.com/products/matlab.html)
 
-**A dynamical systems model exploring control-theoretic policies to steer automation-impacted economies toward high-prosperity stability points.**
+This project was developed through a dialectic process between the human author and two Large Language Models. The mathematical conceptualization, code generation, and debugging were a joint effort.
 
 ---
 
@@ -54,7 +60,7 @@ The MDM integrates standard production functions with a dynamic labor supply res
 
 If you use this model, code, or the associated stability analysis in your research or project, please cite this repository:
 
-> [Author Name]. (2025). *Minimal Decoupling Model (MDM): A dynamical systems approach to automation economics*. GitHub. https://github.com/YourUsername/MinimalDecouplingModel
+> [Richard Moore, Gemini 3, ChatGPT-5.1]. (2025). *Minimal Decoupling Model (MDM): A dynamical systems approach to automation economics*. GitHub. https://github.com/thecowgoesmoo/MinimalDecouplingModel
 
 ## License
 
